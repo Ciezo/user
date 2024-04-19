@@ -21,9 +21,12 @@ import java.util.List;
 public class User implements UserDetails {
 
     @Id
+    @Column(name = "user_id")
     private long id;
     private String firstname;
     private String lastname;
+    /* username or email attributes should be unique */
+    @Column(unique = true)
     private String usernameEmail;
     private String password;
 
