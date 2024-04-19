@@ -27,7 +27,7 @@ public class User implements UserDetails {
     private String lastname;
     /* username or email attributes should be unique */
     @Column(unique = true)
-    private String usernameEmail;
+    private String email;
     private String password;
 
     @Enumerated(EnumType.STRING)
@@ -42,7 +42,7 @@ public class User implements UserDetails {
 
     @Override
     public String getUsername() {
-        return usernameEmail;
+        return email;
     }
 
     @Override
