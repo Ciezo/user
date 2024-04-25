@@ -35,6 +35,7 @@ public class AuthenticationService {
                 .lastname(request.getLastname())
                 .email(request.getEmail())
                 .password(pwdEncoder.encode(request.getPassword()))
+                .roles(request.getRole())
                 .build();
         /* Save into database using JPA hibernate */
         User saveUserToDb = userRepository.save(user);
@@ -61,7 +62,7 @@ public class AuthenticationService {
         UsernamePasswordAuthenticationToken signIn = new UsernamePasswordAuthenticationToken(email, password);
         /** Sign-in and authenticate user */
         authManager.authenticate(signIn);
-
+        /** Find existing User from the database */
         User userSigningIn = userRepository.findByEmail(email)
                 .orElseThrow();
 

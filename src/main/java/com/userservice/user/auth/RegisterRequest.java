@@ -1,5 +1,6 @@
 package com.userservice.user.auth;
 
+import com.userservice.user.Roles;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -15,5 +16,6 @@ public class RegisterRequest {
     private String lastname;
     private String email;
     private String password;
+    private Roles role;
 
 }
