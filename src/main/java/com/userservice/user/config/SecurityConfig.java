@@ -27,7 +27,7 @@ public class SecurityConfig {
                 .csrf(AbstractHttpConfigurer::disable)
                 .authorizeHttpRequests()
                 /* Whitelisted URLs */
-                .requestMatchers("/api/v1/auth/**")
+                .requestMatchers("/api/user-service/v1/auth/**")
                 .permitAll()
                 .requestMatchers(HttpMethod.GET, "/api/user-service/v1/demo/test").permitAll()
                 .anyRequest()
